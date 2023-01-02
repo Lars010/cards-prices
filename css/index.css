@@ -235,7 +235,7 @@ button {
   margin-inline-start: 2.12rem;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 414px) {
 
   body {
     background: whitesmoke;
