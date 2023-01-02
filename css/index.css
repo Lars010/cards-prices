@@ -215,7 +215,10 @@ button {
 .plan-3 {
   /* border: 3px solid red; */
   inset-block-start: 1rem;
+}
 
+.plan-3 p {
+  color: var(--black);
 }
 
 .plan-3 .precio {
