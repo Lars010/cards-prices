@@ -1,51 +1,51 @@
 :root {
-  --black: #373737; 
-  --primary: #ff8e3c; 
-  --white: #ffffff; 
-  --grey: #848199; 
-  --red: #fa513a; 
-  --grey-2: #a3a3a3; 
-  --bg: #f5f5fa; 
-  --headline1: 600 3.5rem/normal 'Poppins'; 
-  --headline2: 600 1.75rem/normal 'Poppins'; 
-  --body1-regular: 400 1rem/1.5rem 'Poppins'; 
-  --body1-bold: 700 1rem/1.5rem 'Poppins'; 
-  --body2-regular: 400 0.875rem/1.5rem 'Poppins'; 
+  --black: #373737;
+  --primary: #ff8e3c;
+  --white: #ffffff;
+  --grey: #848199;
+  --red: #fa513a;
+  --grey-2: #a3a3a3;
+  --bg: #f5f5fa;
+  --headline1: 600 3.5rem/normal 'Poppins';
+  --headline2: 600 1.75rem/normal 'Poppins';
+  --body1-regular: 400 1rem/1.5rem 'Poppins';
+  --body1-bold: 700 1rem/1.5rem 'Poppins';
+  --body2-regular: 400 0.875rem/1.5rem 'Poppins';
 }
 
 body {
   font: var(--body1-regular);
 }
 
-h1{
+h1 {
   font: var(--headline1);
   color: var(--primary);
 }
 
-h2{
+h2 {
   font: var(--headline2);
   color: var(--red);
 }
 
-h3{
+h3 {
   font: var(--body2-regular);
 }
 
-p{
+p {
   color: var(--grey);
 }
 
 .layout {
-block-size: 100vh;
-border: 1px solid red;
-background: var(--bg);
+  block-size: 100vh;
+  /* border: 1px solid red; */
+  background: var(--bg);
 }
 
 .titulo {
   inline-size: 35rem;
   block-size: 7.75rem;
   margin-inline-start: 8.4rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .titulo h1 {
@@ -61,22 +61,19 @@ background: var(--bg);
 
 .contenedor {
   display: flex;
-  inline-size: 73.12rem;
+  inline-size: 100%;
+  max-inline-size: 73.12rem;
   block-size: 32.5rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-inline-start: 8.4rem;
   margin-block-start: 8.12rem;
-}
-
-.contenedor {
-  display: flex;
   align-items: center;
   background: var(--white);
   border-radius: 26px;
 }
 
 .oferta {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   inline-size: 14.6rem;
   block-size: 24.37rem;
   margin-block-start: 2.5rem;
@@ -89,7 +86,12 @@ background: var(--bg);
 .oferta .precio {
   display: flex;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+.plan-3 .precio {
+  display: flex;
+  align-items: center;
 }
 
 .precio h2 {
@@ -128,10 +130,14 @@ background: var(--bg);
 }
 
 .boton {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   margin-block-start: 1rem;
+}
+
+button {
+  cursor: pointer;
 }
 
 .boton button {
@@ -143,6 +149,26 @@ background: var(--bg);
   background: rgba(255, 142, 60, 0.1);
   border: none;
 }
+
+.plan-1 .beneficio-2 {
+  opacity: 0.3;
+}
+
+.plan-1 .beneficio-3 {
+  opacity: 0.3;
+}
+
+.plan-1 .beneficio-4 {
+  opacity: 0.3;
+}
+
+.plan-2 .beneficio-3 {
+  opacity: 0.3;
+  }
+
+  .plan-2 .beneficio-4 {
+    opacity: 0.3;
+    }  
 
 .plan-3 {
   block-size: 30rem;
@@ -187,14 +213,14 @@ background: var(--bg);
 }
 
 .plan-3 {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   inset-block-start: 1rem;
 
 }
 
 .plan-3 .precio {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-inline-start: 2.12rem;
 }
 
@@ -208,16 +234,64 @@ background: var(--bg);
 
 @media screen and (max-width: 360px) {
 
-.layout {
-  display: block;
-  max-inline-size: 22.5rem;
-  block-size: 100vh;
-}
+  body {
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+  }
 
-.contenedor {
-  display: block;
-   /* grid-template-columns: 18.25rem;
+  .layout {
+    display: inline-block;
+    inline-size: 100%;           /*Al poner el inline-size a un 100* se mostrara el contenido completo hasta el max inline size  */
+    max-inline-size: 22.5rem;
+    block-size: 100vh;
+    justify-content: center;
+  }
+
+  .titulo {
+    inline-size: 18.25rem;
+    margin-inline-start: 2.12rem;
+  }
+
+  .titulo h1 {
+    font: var(--headline2);
+  }
+
+  .contenedor {
+    display: grid;
+    grid-template-areas: "plan-3" "plan-1" "plan-2" "plan-4";
+    background: none;
+    margin-inline-start: 0;
+    margin-block-start: 1.5rem;
+
+    /* grid-template-columns: 18.25rem;
   grid-template-rows: 1fr;
   flex-direction: column; */
-}
+  }
+
+  .plan-3 {
+    grid-area: plan-3;
+    margin-inline: 2.12rem;
+  }
+
+  .plan-1 {
+    grid-area: plan-1;
+    padding: 1.75rem;
+    border-radius: 26px;
+    margin-inline: 2.12rem;
+  }
+
+  .plan-2 {
+    grid-area: plan-2;
+    padding: 1.75rem;
+    border-radius: 26px;
+    margin-inline: 2.12rem;
+  }
+
+  .plan-4 {
+    grid-area: plan-4;
+    padding: 1.75rem;
+    border-radius: 26px;
+    margin-inline: 2.12rem;
+  }
 }
